@@ -1,0 +1,836 @@
+/* =======================================
+   Юлия & Виталий
+   Wedding Invitation
+======================================= */
+
+:root{
+
+--milk:#faf8f4;
+--powder:#ead8d2;
+--gold:#c9b48d;
+--text:#4a4a4a;
+--white:#ffffff;
+--shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--milk);
+
+font-family:'Montserrat',sans-serif;
+
+color:var(--text);
+
+overflow-x:hidden;
+
+line-height:1.8;
+
+}
+
+/* ====================== */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* ====================== */
+
+.hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+/* ====================== */
+
+.hero-image{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+animation:zoom 20s infinite alternate;
+
+}
+
+/* ====================== */
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+rgba(250,248,244,.50),
+
+rgba(250,248,244,.70)
+
+);
+
+backdrop-filter:blur(1px);
+
+}
+
+/* ====================== */
+
+.hero-content{
+
+position:relative;
+
+text-align:center;
+
+max-width:900px;
+
+padding:20px;
+
+z-index:5;
+
+animation:fadeUp 1.6s ease;
+
+}
+
+.hero-content h2{
+
+font-size:18px;
+
+letter-spacing:5px;
+
+font-weight:400;
+
+margin-bottom:25px;
+
+text-transform:uppercase;
+
+}
+
+.hero-content h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:92px;
+
+font-weight:400;
+
+line-height:1;
+
+color:#7a6550;
+
+}
+
+.hero-content h1 span{
+
+display:block;
+
+font-size:55px;
+
+margin:15px 0;
+
+color:var(--gold);
+
+}
+
+.hero-content p{
+
+max-width:520px;
+
+margin:40px auto;
+
+font-size:20px;
+
+line-height:2;
+
+font-weight:300;
+
+}
+
+/* ====================== */
+
+.btn{
+
+display:inline-block;
+
+padding:18px 45px;
+
+background:var(--gold);
+
+border-radius:60px;
+
+color:white;
+
+transition:.35s;
+
+letter-spacing:2px;
+
+font-size:14px;
+
+text-transform:uppercase;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+/* ====================== */
+
+.section{
+
+padding:120px 20px;
+
+max-width:1100px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.section h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:56px;
+
+font-weight:500;
+
+margin-bottom:20px;
+
+color:#6b5a48;
+
+}
+
+.section h3{
+
+font-size:34px;
+
+font-weight:300;
+
+margin-bottom:30px;
+
+}
+
+.line{
+
+width:90px;
+
+height:2px;
+
+background:var(--gold);
+
+margin:40px auto;
+
+}
+
+.section p{
+
+font-size:20px;
+
+font-weight:300;
+
+max-width:760px;
+
+margin:25px auto;
+
+}
+
+/* ====================== */
+
+.timer-section{
+
+padding:120px 20px;
+
+background:linear-gradient(
+180deg,
+#faf8f4,
+#fff
+);
+
+text-align:center;
+
+}
+
+.timer-section h2{
+
+font-size:54px;
+
+font-family:'Cormorant Garamond',serif;
+
+margin-bottom:70px;
+
+color:#6b5a48;
+
+}
+
+.timer{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+max-width:950px;
+
+margin:auto;
+
+}
+
+.timer div{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.timer div:hover{
+
+transform:translateY(-8px);
+
+}
+
+.timer span{
+
+font-size:72px;
+
+font-family:'Cormorant Garamond',serif;
+
+color:var(--gold);
+
+}
+
+.timer p{
+
+margin-top:15px;
+
+font-size:16px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+}
+/* ===========================
+   PROGRAM
+=========================== */
+
+.card{
+
+background:#fff;
+
+padding:55px;
+
+border-radius:28px;
+
+margin:45px auto;
+
+max-width:700px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.07);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 30px 70px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+font-size:54px;
+
+font-family:'Cormorant Garamond',serif;
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+}
+
+.card h4{
+
+font-size:28px;
+
+font-weight:400;
+
+margin-bottom:20px;
+
+color:#6b5a48;
+
+}
+
+.card p{
+
+font-size:18px;
+
+line-height:1.9;
+
+margin-bottom:30px;
+
+}
+
+.map-btn{
+
+display:inline-block;
+
+padding:16px 38px;
+
+border-radius:50px;
+
+background:var(--gold);
+
+color:#fff;
+
+transition:.3s;
+
+font-size:14px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+}
+
+.map-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.gallery{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:120px 20px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:520px;
+
+object-fit:cover;
+
+border-radius:24px;
+
+cursor:pointer;
+
+transition:.6s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* ===========================
+   RSVP
+=========================== */
+
+form{
+
+max-width:700px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+input,
+textarea,
+select{
+
+padding:18px 22px;
+
+border:none;
+
+background:#fff;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-family:inherit;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+outline:none;
+
+}
+
+textarea{
+
+min-height:170px;
+
+resize:none;
+
+}
+
+form button{
+
+padding:18px;
+
+border:none;
+
+background:var(--gold);
+
+color:white;
+
+font-size:16px;
+
+letter-spacing:2px;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+form button:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+padding:140px 20px;
+
+text-align:center;
+
+background:#f5f1ea;
+
+}
+
+footer h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:52px;
+
+font-weight:400;
+
+color:#6b5a48;
+
+margin-bottom:30px;
+
+}
+
+footer h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:84px;
+
+font-weight:400;
+
+margin-bottom:20px;
+
+color:#7b654f;
+
+}
+
+footer p{
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+font-size:14px;
+
+}
+
+/* ===========================
+   MUSIC BUTTON
+=========================== */
+
+#musicBtn{
+
+position:fixed;
+
+top:25px;
+
+right:25px;
+
+width:60px;
+
+height:60px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.92);
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+z-index:1000;
+
+transition:.3s;
+
+}
+
+#musicBtn:hover{
+
+transform:rotate(20deg) scale(1.08);
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.12);
+
+}
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+.hero-content h1{
+
+font-size:62px;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+.timer{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery img{
+
+height:420px;
+
+}
+
+.card{
+
+padding:35px;
+
+}
+
+.section h2{
+
+font-size:42px;
+
+}
+
+footer h1{
+
+font-size:56px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-content h1{
+
+font-size:46px;
+
+}
+
+.hero-content h1 span{
+
+font-size:36px;
+
+}
+
+.hero-content h2{
+
+font-size:14px;
+
+letter-spacing:3px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+.timer{
+
+grid-template-columns:1fr;
+
+}
+
+.timer span{
+
+font-size:56px;
+
+}
+
+.section{
+
+padding:90px 20px;
+
+}
+
+footer{
+
+padding:90px 20px;
+
+}
+
+}
